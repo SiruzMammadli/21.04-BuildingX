@@ -291,10 +291,98 @@ header .navbar.sticky .soc-icons {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+  opacity: 1;
+  -webkit-transition: .3s;
+  transition: .3s;
+  visibility: visible;
 }
 
-.loader-screen span {
+.loader-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-screen .loader {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 1px solid var(--header-clr);
+}
+
+.loader-screen .loader::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: var(--header-clr);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.loader-screen .loader .orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  background-color: transparent;
+  width: 37.5px;
+  height: 2px;
+  z-index: 1;
+  -webkit-animation: circle 3s infinite linear;
+          animation: circle 3s infinite linear;
+}
+
+.loader-screen .loader .orbit::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -6.5px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: var(--header-clr);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.loader-screen .text {
   font-weight: bold;
+  -webkit-transform: translateX(7px);
+          transform: translateX(7px);
+}
+
+@-webkit-keyframes circle {
+  0% {
+    -webkit-transform: rotate(0deg) translateY(-50%);
+            transform: rotate(0deg) translateY(-50%);
+  }
+  100% {
+    -webkit-transform: rotate(359deg) translateY(-50%);
+            transform: rotate(359deg) translateY(-50%);
+  }
+}
+
+@keyframes circle {
+  0% {
+    -webkit-transform: rotate(0deg) translateY(-50%);
+            transform: rotate(0deg) translateY(-50%);
+  }
+  100% {
+    -webkit-transform: rotate(359deg) translateY(-50%);
+            transform: rotate(359deg) translateY(-50%);
+  }
 }
 
 @media (max-width: 1060px) {
@@ -322,6 +410,17 @@ header .navbar.sticky .soc-icons {
     color: var(--black-clr);
     font-size: 25px;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 850px) {
+  header .top--side, header .mid--side {
+    display: none;
+  }
+  header .navbar.mobile {
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

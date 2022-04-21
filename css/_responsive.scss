@@ -31,3 +31,16 @@
         }
     }
 }
+
+@media (max-width: 850px) {
+    header {
+        .top--side, .mid--side {
+            display: none;
+        }
+        .navbar.mobile {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+    }
+}
