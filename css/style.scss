@@ -77,6 +77,7 @@ header {
     }
 
     .mid--side {
+        height: 92px;
         background-color: var(--header-clr);
 
         .wrapper {
@@ -86,7 +87,7 @@ header {
             align-items: center;
             justify-content: space-between;
 
-            a {
+            .logo-img {
                 display: block;
                 padding: 15px;
             }
@@ -132,13 +133,14 @@ header {
 
             .logo-brand {
                 display: block;
-                // opacity: 0;
+                opacity: 0;
             }
             
             .soc-icons {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                opacity: 0;
 
                 a {
                     display: block;
@@ -203,6 +205,23 @@ header {
                     }
                 }
             }
+
+            .open-btn {
+                display: none;
+            }
+        }
+
+        &.sticky {
+            position: fixed;
+            top: 0; width: 100%;
+
+            .logo-brand {
+                opacity: 1;
+            }
+
+            .soc-icons {
+                opacity: 1;
+            }
         }
     }
 }
@@ -233,3 +252,13 @@ header {
         font-weight: bold;
     }
 }
+
+
+
+
+
+
+
+
+
+@import '_responsive'

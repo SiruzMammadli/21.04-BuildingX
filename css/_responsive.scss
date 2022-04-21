@@ -1,0 +1,33 @@
+@media (max-width: 1060px) {
+    header {
+        .mid--side {
+            .logo-img {
+                display: none !important;
+            }
+            .contact-info {
+                transform: translateY(50%);
+            }
+        }
+        .navbar {
+            padding: 15px 0;
+            .nav-menu {
+                display: none !important;
+            }
+
+            .logo-brand {
+                opacity: 1 !important;
+            }
+
+            .soc-icons {
+                display: none !important;
+            }
+
+            .open-btn {
+                display: block !important;
+                color: var(--black-clr);
+                font-size: 25px;
+                cursor: pointer;
+            }
+        }
+    }
+}
